@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<script>
+	
+	function pulaLinha () {
+		document.write ("<br>");
+	}
+
+	function mostra (info){
+		document.write (info);
+		pulaLinha ();
+	}
+
+	var vitorias = parseInt (prompt ("Entre com o número de vitórias"));//converte string para número inteiro
+	var empates = parseInt (prompt ("Entre com o número de empates"));
+	var pontos = vitorias * 3 + empates;
+
+	mostra ("Os pontos do seu time é " + pontos + ".");
+
+	if (pontos > 28) {
+	mostra ("Seu time teve desempenho superior ao ano passado.");
+	}
+	if (pontos < 28) {
+	mostra ("Seu time teve desempenho inferior ao ano passado.");
+	}
+	if (pontos == 28) {
+	mostra ("Seu time teve desempenho igual ao ano passado")
+	}
+
+
+
+
+ </script>

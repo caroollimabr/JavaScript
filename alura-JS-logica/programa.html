@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+
+<script>
+	var ano = 2019;
+
+	document.write ("A soma das idades é " + (20 + 10 + 30)/3 + "<br>");/*Para somar, precisa dos parênteses para não concatenar*/
+	document.write ("Joaquim nasceu em " + (2016 - 39) + "." + "<br>");
+	document.write ("Barney tem " + (ano - 1996) + " anos.");
+	document.write ("<br>");//pode colocar <br> separado ou junto
+	document.write ("<br>");
+	document.write ("João tem " + (ano - 1987) + " anos." + "<br><br>");//pode colocar duas linhas junto
+
+	ano = 2017;
+	document.write ("Carla tem " + (ano - 1987) + " anos." + "<br>");
+
+	var idadeBarney = 23
+	var idadeJoao = 32
+	var idadeCarla = 30
+	var media = (idadeBarney + idadeJoao + idadeCarla)/3;
+
+	document.write ('A média das idades é ' + Math.round(media) + '.<br>')//JavaScript usa aspas simples ou duplas
+
+	var nome = 'Carla';
+	document.write ("A idade de " + nome + " é " + idadeCarla + ".<br><br><br><br>")
+
+	ano = 2019;
+	function pulaLinha () {
+		document.write ("<br>");
+	}
+
+	function mostra (infosSobreIdade){
+		document.write (infosSobreIdade)
+		pulaLinha ()
+	}
+
+	mostra ("A soma das idades é " + (20 + 10 + 30)/3)//document.write ("A soma das idades é " + (20 + 10 + 30)/3);/*Para somar, precisa dos parênteses para não concatenar*/
+	
+	mostra ("Joaquim nasceu em " + (2016 - 39) + ".")
+
+	mostra ("João tem " + (ano - 1987) + " anos.")
+	
+
+
+ </script>
