@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var carro = {
+            velocidade: 0,
+            ano: 2019,
+            marca: "fiat",
+            novo: false,
+            sedan: false,
+            ligado: true,
+
+            acelerar: function() {
+                if (this.ligado) {
+                    console.log("vrum");
+                    this.velocidade = 100;
+                }
+            },
+            frear: function() {
+                if (this.velocidade <= 100) {
+                    this.velocidade = 50;
+                }
+                console.log(` o velocimetro esta em ${this.velocidade}`);
+            },
+            virar: function() {
+                if (this.velocidade < 100) {
+                    console.log("Carro virando");
+                } else {
+                    console.log("Capotando...");
+                    this.ligado = false;
+                }
+            }
+        };
+
+        for (const atributo in carro) {
+            if (atributo != "virar" && atributo != "freiar" && atributo != "acelerar") {
+                //` interpolação ao colocar $ você pode atribuir variaveis e objetos
+                // tudo que estiver dentro de ` ` é entendido como String
+                console.log(`${atributo}: ${carro[atributo]}`);
+
+            }
+
+        }
+
+        carro.acelerar();
+
+        carro.frear();
+
+        carro.virar();
+    </script>
+</body>
+
+</html>

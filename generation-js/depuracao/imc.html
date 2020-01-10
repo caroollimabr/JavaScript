@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<script>function pulaLinha () {
+		document.write ("<br>");
+	}
+	function mostra (info){
+		document.write (info);
+		pulaLinha ();
+	}
+	function calculaImc (peso, altura) {
+		return peso / (altura * altura) //Coloque return para chamar o RESULTADO!
+	}
+	var nome = prompt ("Informe seu nome:");//abre janela e executa a partir da info dada
+	var alturaInformada = prompt (nome + ", informe sua altura.");
+	var pesoInformado = prompt (nome +", informe seu peso.");
+	var imc = calculaImc (pesoInformado, alturaInformada);
+    mostra (nome + ", o seu IMC é " + imc + ".");
+    if (imc < 16) {
+        mostra ("Baixo peso muito grave.");
+    } else if (imc >= 16 && imc <= 16.99){
+        mostra ("Baixo peso grave.");
+    } else if (imc >= 17 && imc <= 18.49) {
+		mostra ("Baixo peso.");
+	} else if (imc >= 18.5 && imc <= 24.99) {
+		mostra ("Peso normal.");
+	} else if (imc >= 25 && imc <= 29.99){
+		mostra ("Sobrepeso.");
+    } else if (imc >= 30 && imc <= 34.99){
+        mostra ("Obesidade grau I.");
+    } else if (imc >= 35 && imc <= 39.99){
+        mostra ("Obesidade grau II.");
+    } else if (imc >= 40){
+        mostra ("Obesidade grau III.");
+    }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <input id="nome" type="text" name="nome" value="" placeholder="Seu Nome" />
+    <!-----PLACEHOLDER: Texto que vai aparecer caso o campo esteja vazio-->
+    <!------ONCLICK: ao clicar, executa a função pegarNome()-->
+    <input id="sobrenome" type="text" name="nome" value="" placeholder="Seu sobrenome" />
+    <button onclick="pegarNomeCompleto()">Ok</button>
+
+
+    <script>
+        function pegarNomeCompleto() {
+            var nome = document.getElementById("nome").value;
+            var sobrenome = document.getElementById("sobrenome").value;
+            alert (`${nome} ${sobrenome}`);
+        }
+
+        
+    </script>
+</body>
+
+</html>
