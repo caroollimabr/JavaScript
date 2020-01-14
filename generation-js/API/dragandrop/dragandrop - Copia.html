@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        .div1 {
+            width: 350px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+    <script>
+
+        //Evento permite que voce solte o elemento Html
+        function allowDrop(par) {
+            par.preventDefault(); //evitar que o comportamento do HTML seja default
+        }
+
+        //Evento disparado ao arrastar o Elemento Html
+        function drag(par) {
+            par // evento
+                .dataTransfer //transferência de dados
+                .setData("text", par.target.id); //configurar informação (tipo de info, para onde vai)
+
+            par
+                .currentTarget //para onde a info foi
+                .style //adquire determinada config CSS
+                .backgroundColor = 'yellow';
+        }
+
+
+        //Evento Responsavel por recepcionar o Elemento Html
+        function drop(par) { //ev: parâmetro (variável), no caso é a imagem
+            par.preventDefault();
+            var data = par.dataTransfer.getData("text"); //transferência de dados e pegar dados
+            par.target.appendChild(document.getElementById(data)); //colocar esse elemento em um grupo maior
+        }
+    </script>
+</head>
+
+<body ondrop="drop(event)" ondragover="allowDrop(event)">
+
+    <p>Drag the W3Schools image into the rectangle:</p>
+
+    <div id="div1" class="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <!-- on drop:permitir que ele desça; ondragover: quando ele for arrastado e estiver em cima do elemento, allow drop: permitir que o obj caia; event é um elemento da API, e não o parâmetro da função-->
+    <br>
+    <div id="div2" class="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+    <p id="par1" draggable="true" ondragstart="drag(event)">Tomar café</p>
+    <br>
+    <p id="par2" draggable="true" ondragstart="drag(event)">Jogar Magic</p>
+    <br>
+    
+
+</body>
+
+</html>

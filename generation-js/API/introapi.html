@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Dever ou lazer?</title>
+   <style>
+      .div {
+         width: 350px;
+         height: 200px;
+         padding: 10px;
+         border: 3px solid #aaaaaa;
+      }
+   </style>
+   <script>
+         function allowDrop(par){
+            par.preventDefault();
+   
+         }
+   
+         function drag(par){
+            par
+            .dataTransfer
+            .setData("text", par.target.id);
+            
+            par
+               .currentTarget
+               .style
+               .backgroundColor = 'purple'
+         }
+   
+         function drop(par){
+            par.preventDefault();
+            var transfPar = par.dataTransfer.getData("text");
+            par.target.appendChild(document.getElementById(transfPar));
+         }
+      
+      </script>
+      </
+
+
+<body>
+   <h1>Dever ou lazer?</h1>
+   <h2>Dever</h2>
+   <div id="div1" class="div" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+   <br>
+   <h2>Lazer</h2>
+   <div id="div2" class="div" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+   <br>
+   <p id="par1" draggable="true" ondragstart="drag(event)">Tomar café</p>
+   <br>
+   <p id="par2" draggable="true" ondragstart="drag(event)">Jogar Magic</p>
+   <br>
+   <p id="par3" draggable="true" ondragstart="drag(event)">Desenvolver códigos</p>
+   <br>
+   <p id="par4" draggable="true" ondragstart="drag(event)">Ir ao supermercado</p>
+   <br>
+   <p id="par5" draggable="true" ondragstart="drag(event)">Ir ao cinema</p>
+
+   
+
+</body>
+
+</html>
